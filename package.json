@@ -1,6 +1,6 @@
 {
-  "name": "vuepress-theme-antdocs",
-  "title": "AntDocs of VuePress",
+  "name": "vuepress-theme-antdocs-phone",
+  "title": "AntDocs of VuePress for phone",
   "version": "1.0.0",
   "description": "An Ant Design style theme for VuePress.",
   "main": "index.js",
@@ -12,13 +12,13 @@
     "antdocs",
     "ant-design"
   ],
-  "author": "Feng L.H.",
+  "author": "springleo",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zpfz/vuepress-theme-antdocs.git"
+    "url": "git+https://github.com/lq782655835/vuepress-theme-antdocs.git"
   },
   "bugs": {
-    "url": "https://github.com/zpfz/vuepress-theme-antdocs/issues"
+    "url": "https://github.com/lq782655835/vuepress-theme-antdocs/issues"
   },
   "homepage": "http://antdocs.seeyoz.cn",
   "license": "MIT",
