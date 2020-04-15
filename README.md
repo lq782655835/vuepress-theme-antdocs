@@ -4,29 +4,18 @@
 
 <div align="center">
 
-An Ant Design style theme for VuePress.
-
-</div>
-
-<div align="center">
-
-![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/lq782655835/vuepress-theme-antdocs-phone?style=flat-square) ![License](https://img.shields.io/github/license/lq782655835/vuepress-theme-antdocs-phone?style=flat-square)
+An Phone theme base on [vuepress-theme-antdocs](https://github.com/zpfz/vuepress-theme-antdocs).
 
 </div>
 
 # Features
-- Equipped with Ant Design style, you can directly use various components of the UI library.
-- Optimize parts of styles.
-- More features are waiting for you to discover ...
+- base on vuepress-theme-antdocs, support all feature
+- optimize for phone style.
 
 # Quick start
 
 #### Install theme
 
-```sh
-npm i vuepress-theme-antdocs-phone
-```
-or
 ```sh
 yarn add vuepress-theme-antdocs-phone
 ```
@@ -36,15 +25,16 @@ yarn add vuepress-theme-antdocs-phone
 Open your `.vuepress/config.js`, and then add VuePress theme reference code:
 ```js
 module.exports = {
-  theme: 'antdocs',
-  phoneURL: 'http://localhost:8080'
+  theme: 'antdocs-phone',
+  themeConfig: {
+    phoneURL: 'http://localhost:8080'
+  }
 }
 ```
 You can get help here: [Using a theme](https://vuepress.vuejs.org/theme/using-a-theme.html#theme-shorthand)
 
 # Preview
 
-<p align="center"><img src="https://s2.ax1x.com/2020/02/28/3B3lOf.png"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/6310131/79222217-bc1f2b00-7e89-11ea-834c-9212dbda32e0.png"/></p>
 
-# Changlog
 
