@@ -5,6 +5,8 @@
             <div class="bar__time">19:01:30</div>
             <div class="bar__battery">100%</div>
         </header>
+        <a-button type="primary"  @click="dynamicHandle" block>动态生成page</a-button>
+        <div ref="preview"></div>
         <section class="simulator__url">
             <input type="text" :value="src">
         </section>
@@ -12,11 +14,67 @@
     </main>
 </template>
 <script>
+import Vue from 'vue'
 export default {
     name: 'Preview',
     props: {
         src: {
             type: String,
+        }
+    },
+    methods: {
+        dynamicHandle() {
+            const dataObj = {
+                str: 'something',
+                components: [
+                    {
+                        id: '1',
+                        name: 'MCButton',
+                        props: { type: 'danger', size: 'small', block: true, text: 'ceshi1' }
+                    },
+                    {
+                        id: '2',
+                        name: 'MCButton',
+                        props: { type: 'warning', block: true, text: 'ceshi2' }
+                    }
+                ]
+            }
+            let PreviewVue = Vue.extend({
+                template: `
+                <div>
+                    <MCButton :type="type">默认按钮</MCButton>
+                    <component
+                        v-for="oneComponent in components"
+                        :key="oneComponent.id"
+                        :is="oneComponent.name"
+                        v-bind="oneComponent.props">
+                        {{oneComponent.props.text}}
+                    </component>
+                    {{str}}
+                    {{score}}
+                    <MCSlider ></MCSlider>
+                </div>
+                `,
+                data() {
+                    return {
+                        type: "danger",
+                        score: 8,
+                        str: '11111'
+                    }
+                }
+            })
+            let instance = new PreviewVue({
+                data() { // data自动合并
+                    return dataObj
+                }
+            }).$mount()
+            let el = instance.$el
+            let preview = this.$refs.preview
+            preview.appendChild(el)
+
+            setTimeout(() => {
+                dataObj.str = 'another thing';
+            }, 1500);
         }
     }
 };
